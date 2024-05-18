@@ -26,7 +26,7 @@ $excludedUsers = @("YOURDOMAINNAME\LOCALACCOUNTTOEXCLUDE1", "YOURDOMAINNAME\Loca
 ## Deployment through Intune
 
 1. **Save the Script:**
-   - Save the PowerShell script as `GlobalProtectPortalsDetection.ps1`.
+   - Save the PowerShell scripts as `DetectionScript.ps1` & `RemediationScript.ps1`.
 
 2. **Log in to the Intune Admin Center:**
    - Go to the Microsoft Endpoint Manager admin center.
@@ -37,11 +37,12 @@ $excludedUsers = @("YOURDOMAINNAME\LOCALACCOUNTTOEXCLUDE1", "YOURDOMAINNAME\Loca
 4. **Upload the Script:**
    - Select `Create` and choose `Windows 10 and later` as the platform.
    - Give the script a name and description.
-   - Upload the `GlobalProtectPortalsDetection.ps1` script file to 'Detection script file'.
+   - Upload the `DetectionScript.ps1` script file to 'Detection script file'.
+   - Upload the `RemediationScript.ps1` script file to 'Remediation script file'.
 
 5. **Configure Script Settings:**
    - Set the `Script settings` as per your requirements.
-   - Ensure `Run this script using the logged on credentials` is set to `Yes` because the script requires user-level access to the registry.
+   - Ensure `Run this script using the logged on credentials` is set to `No`.
 
 6. **Assign the Script:**
    - Assign the script to the appropriate device groups.
