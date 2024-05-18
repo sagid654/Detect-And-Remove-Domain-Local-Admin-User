@@ -1,0 +1,1 @@
+# Detect-And-Remove-Domain-Local-Admin-User
