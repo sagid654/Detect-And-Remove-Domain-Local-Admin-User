@@ -8,6 +8,18 @@ This repository contains two PowerShell scripts designed for managing domain use
 
 The detection script checks if there are any domain users (excluding specified ones) in the local administrators group.
 
+### Usage
+
+1. Replace `YOURDOMAINNAME` with your actual domain name.
+2. Update the `$excludedUsers` array with the users you want to exclude from the check.
+3. Deploy the script through Intune as a detection script.
+
+```powershell
+# Detection Script
+$domainName = "YOURDOMAINNAME"
+$excludedUsers = @("YOURDOMAINNAME\LOCALACCOUNTTOEXCLUDE1", "YOURDOMAINNAME\LocalAdmins")
+```
+
 ## Remediation Script
 The remediation script removes domain users (excluding specified ones) from the local administrators group.
 
@@ -18,7 +30,7 @@ The remediation script removes domain users (excluding specified ones) from the 
 3. Deploy the script through Intune as a detection script.
 
 ```powershell
-# Detection & Remediation Scripts
+# Remediation Script
 $domainName = "YOURDOMAINNAME"
 $excludedUsers = @("YOURDOMAINNAME\LOCALACCOUNTTOEXCLUDE1", "YOURDOMAINNAME\LocalAdmins")
 ```
